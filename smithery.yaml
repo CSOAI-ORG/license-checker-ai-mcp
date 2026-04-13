@@ -1,0 +1,10 @@
+name: license-checker-ai-mcp
+description: "MEOK AI Labs — Open source license identification and compatibility tools powered by MEOK AI Labs."
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/license-checker-ai-mcp
+license: MIT
+categories: [Developer Tools, Compliance]
+tags: [license-check, open-source-license, software-licensing, compliance-check]
+runtime: python
+entrypoint: server.py
