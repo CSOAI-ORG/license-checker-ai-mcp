@@ -1,29 +1,16 @@
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
-
 [project]
 name = "license-checker-ai-mcp"
 version = "1.0.0"
-description = "MEOK AI Labs — Open source license identification and compatibility tools powered by MEOK AI Labs."
-authors = [{name="MEOK AI Labs", email="nicholas@meok.ai"}]
-readme = "README.md"
-license = {text = "MIT"}
+description = "MEOK AI Labs — license-checker-ai-mcp"
+license = {file = "LICENSE"}
 requires-python = ">=3.10"
-keywords = ["mcp", "mcp-server", "model-context-protocol", "claude", "ai-tools", "meok-ai-labs", "license-check", "open-source-license", "software-licensing", "compliance-check"]
-classifiers = [
-    "Development Status :: 4 - Beta",
-    "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3",
-    "Topic :: Scientific/Engineering :: Artificial Intelligence",
-    "Intended Audience :: Developers",
-]
-dependencies = [
-    "mcp>=1.0.0",
-]
-
+authors = [{name = "MEOK AI Labs", email = "nicholas@meok.ai"}]
+dependencies = ["mcp>=1.0.0"]
 [project.urls]
 Homepage = "https://meok.ai"
-Repository = "https://github.com/CSOAI-ORG/license-checker-ai-mcp"
-Documentation = "https://meok.ai/docs/license-checker-ai-mcp"
-"Bug Tracker" = "https://github.com/CSOAI-ORG/license-checker-ai-mcp/issues"
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+only-include = ["server.py"]
