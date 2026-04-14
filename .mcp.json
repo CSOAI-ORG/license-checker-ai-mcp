@@ -1,23 +1,78 @@
 {
   "name": "license-checker-ai-mcp",
-  "description": "MEOK AI Labs \u2014 Open source license identification and compatibility tools powered by MEOK AI Labs.",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/license-checker-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "License identification, compatibility checking, generation, and term explanation.",
+  "version": "1.0.0",
   "tools": [
-    "identify_license",
-    "check_compatibility",
-    "generate_license",
-    "explain_terms"
-  ],
-  "categories": [
-    "Developer Tools",
-    "Compliance"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "identify_license",
+      "description": "Identify the license type from license text content.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "check_compatibility",
+      "description": "Check if two licenses are compatible for combining code.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "license_a": {
+            "type": "string"
+          },
+          "license_b": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "license_a",
+          "license_b"
+        ]
+      }
+    },
+    {
+      "name": "generate_license",
+      "description": "Generate license text for common open source licenses.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "license_type": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "year": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "license_type",
+          "author"
+        ]
+      }
+    },
+    {
+      "name": "explain_terms",
+      "description": "Explain the key terms and obligations of a license in plain language.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "license_type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "license_type"
+        ]
+      }
+    }
+  ]
 }

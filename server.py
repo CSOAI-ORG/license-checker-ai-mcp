@@ -3,6 +3,11 @@ License Checker AI MCP Server
 Open source license identification and compatibility tools powered by MEOK AI Labs.
 """
 
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import time
 from collections import defaultdict
 from mcp.server.fastmcp import FastMCP
@@ -71,12 +76,16 @@ def _check_rate_limit(tool_name: str) -> None:
 
 
 @mcp.tool()
-def identify_license(text: str) -> dict:
+def identify_license(text: str, api_key: str = "") -> dict:
     """Identify the license type from license text content.
 
     Args:
         text: License text content to identify
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("identify_license")
     matches = []
     for fingerprint, license_id in FINGERPRINTS.items():
@@ -94,13 +103,17 @@ def identify_license(text: str) -> dict:
 
 
 @mcp.tool()
-def check_compatibility(license_a: str, license_b: str) -> dict:
+def check_compatibility(license_a: str, license_b: str, api_key: str = "") -> dict:
     """Check if two licenses are compatible for combining code.
 
     Args:
         license_a: First license identifier (e.g., 'MIT', 'GPL-3.0')
         license_b: Second license identifier
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("check_compatibility")
     a, b = license_a.upper().replace(" ", "-"), license_b.upper().replace(" ", "-")
     a_info = LICENSES.get(a, {})
@@ -125,7 +138,7 @@ def check_compatibility(license_a: str, license_b: str) -> dict:
 
 
 @mcp.tool()
-def generate_license(license_type: str, author: str, year: int = 0) -> dict:
+def generate_license(license_type: str, author: str, year: int = 0, api_key: str = "") -> dict:
     """Generate license text for common open source licenses.
 
     Args:
@@ -133,6 +146,10 @@ def generate_license(license_type: str, author: str, year: int = 0) -> dict:
         author: Copyright holder name
         year: Copyright year (default: current year)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("generate_license")
     from datetime import date as _date
     if not year:
@@ -190,12 +207,16 @@ SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY.""",
 
 
 @mcp.tool()
-def explain_terms(license_type: str) -> dict:
+def explain_terms(license_type: str, api_key: str = "") -> dict:
     """Explain the key terms and obligations of a license in plain language.
 
     Args:
         license_type: License identifier (e.g., 'MIT', 'GPL-3.0', 'Apache-2.0')
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("explain_terms")
     lt = license_type.upper().replace(" ", "-")
     info = LICENSES.get(lt)
