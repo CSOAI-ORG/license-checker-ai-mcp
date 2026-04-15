@@ -1,6 +1,6 @@
 {
   "name": "license-checker-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 MEOK AI Labs MCP Server",
+  "description": "MCP server for license checker ai. Features identify license, check compatibility, generate license. From MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
