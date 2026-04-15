@@ -1,6 +1,5 @@
 name: license-checker-ai-mcp
-description: License identification, compatibility checking, generation, and term
-  explanation.
+description: MEOK AI Labs MCP Server
 version: 1.0.0
 tools:
 - name: identify_license
