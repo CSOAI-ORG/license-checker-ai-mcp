@@ -1,65 +1,38 @@
-# License Checker Ai
+<div align="center">
 
-> By [MEOK AI Labs](https://meok.ai) — MEOK AI Labs MCP Server
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/license-checker-ai-mcp)](https://github.com/CSOAI-ORG/license-checker-ai-mcp/stargazers)
 
-License Checker AI MCP Server
+# ulicenseU checkerU aiU mcp
+
+**License Checker AI MCP Server**
+
+[![npm version](https://img.shields.io/npm/v/@meok-ai/license-checker-ai-mcp)](https://www.npmjs.com/package/@meok-ai/license-checker-ai-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
+
+[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/license-checker-ai-mcp/issues)
+
+</div>
+
+---
 
 ## Installation
 
 ```bash
 pip install license-checker-ai-mcp
+# or
+npm install -g @meok-ai/license-checker-ai-mcp
 ```
 
-## Usage
+## Quick Start
 
-```bash
-# Run standalone
-python server.py
+See the project repository for full documentation and examples.
 
-# Or via MCP
-mcp install license-checker-ai-mcp
-```
+## Enterprise Support
 
-## Tools
-
-### `identify_license`
-Identify the license type from license text content.
-
-**Parameters:**
-- `text` (str)
-
-### `check_compatibility`
-Check if two licenses are compatible for combining code.
-
-**Parameters:**
-- `license_a` (str)
-- `license_b` (str)
-
-### `generate_license`
-Generate license text for common open source licenses.
-
-**Parameters:**
-- `license_type` (str)
-- `author` (str)
-- `year` (int)
-
-### `explain_terms`
-Explain the key terms and obligations of a license in plain language.
-
-**Parameters:**
-- `license_type` (str)
-
-
-## Authentication
-
-Free tier: 15 calls/day. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
-
-## Links
-
-- **Website**: [meok.ai](https://meok.ai)
-- **GitHub**: [CSOAI-ORG/license-checker-ai-mcp](https://github.com/CSOAI-ORG/license-checker-ai-mcp)
-- **PyPI**: [pypi.org/project/license-checker-ai-mcp](https://pypi.org/project/license-checker-ai-mcp/)
+- 📧 nicholas@csoai.org
+- 🌐 [CSOAI.org](https://csoai.org)
 
 ## License
 
-MIT — MEOK AI Labs
+MIT © [CSOAI](https://csoai.org)
