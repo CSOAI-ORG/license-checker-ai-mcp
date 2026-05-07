@@ -1,3 +1,5 @@
+[![license-checker-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/license-checker-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/license-checker-ai-mcp)
+
 <div align="center">
 
 [![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/license-checker-ai-mcp)](https://github.com/CSOAI-ORG/license-checker-ai-mcp/stargazers)
