@@ -5,7 +5,6 @@ Open source license identification and compatibility tools powered by MEOK AI La
 
 
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import time
@@ -113,7 +112,7 @@ def identify_license(text: str, api_key: str = "") -> dict:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("identify_license")
     matches = []
@@ -170,7 +169,7 @@ def check_compatibility(license_a: str, license_b: str, api_key: str = "") -> di
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("check_compatibility")
     a, b = license_a.upper().replace(" ", "-"), license_b.upper().replace(" ", "-")
@@ -234,10 +233,19 @@ def generate_license(license_type: str, author: str, year: int = 0, api_key: str
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("generate_license")
     from datetime import date as _date
+
+STRIPE_199 = "https://buy.stripe.com/00wfZjcgAeUW4c5cyQ8k90K"
+
+def _add_upgrade_tail(response, tier="free"):
+    """Append upgrade nudge to free-tier success responses."""
+    if isinstance(response, dict) and tier == "free":
+        response["_upgrade_note"] = "Pro tier: unlimited calls + priority support. Upgrade: " + STRIPE_199
+    return response
+
     if not year:
         year = _date.today().year
     templates = {
@@ -330,7 +338,7 @@ def explain_terms(license_type: str, api_key: str = "") -> dict:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": STRIPE_199}
 
     _check_rate_limit("explain_terms")
     lt = license_type.upper().replace(" ", "-")
@@ -352,5 +360,8 @@ def explain_terms(license_type: str, api_key: str = "") -> dict:
             "copyleft": info["copyleft"], "patent_grant": info["patent_grant"]}
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()
