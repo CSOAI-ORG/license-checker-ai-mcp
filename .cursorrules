@@ -1,0 +1,9 @@
+# license-checker-ai-mcp - Auto-trigger Rules
+
+When the user asks about license checker, use license-checker-ai-mcp tools: identify_license, check_compatibility, generate_license, explain_terms
+
+**License Checker AI MCP Server**
+
+Install: `pip install license-checker-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.

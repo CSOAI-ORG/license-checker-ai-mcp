@@ -1,0 +1,25 @@
+{
+  "name": "license-checker-ai-mcp",
+  "title": "License Checker Ai Mcp",
+  "description": "MCP server for license checker ai. Features identify license, check compatibility, generate license. From MEOK AI Labs.",
+  "version": "1.0.7",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "identify_license"
+    },
+    {
+      "name": "check_compatibility"
+    },
+    {
+      "name": "generate_license"
+    },
+    {
+      "name": "explain_terms"
+    }
+  ]
+}

@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "license-checker-ai-mcp"
-version = "1.0.4"
+version = "1.0.7"
 readme = "README.md"
 description = "MCP server for license checker ai. Features identify license, check compatibility, generate license. From MEOK AI Labs."
 license = {file = "LICENSE"}
@@ -22,7 +22,7 @@ Homepage = "https://meok.ai"
 Repository = "https://github.com/CSOAI-ORG/license-checker-ai-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
-only-include = ["server.py"]
+only-include = ["server.py", "auth_middleware.py"]
 
 [project.scripts]
 license_checker_ai_mcp = "server:main"

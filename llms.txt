@@ -1,0 +1,33 @@
+# license-checker-ai-mcp
+# **License Checker AI MCP Server**
+
+## Install
+```bash
+pip install license-checker-ai-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `identify_license`
+Identify the license type from license text content.
+
+### `check_compatibility`
+Check if two licenses are compatible for combining code.
+
+### `generate_license`
+Generate license text for common open source licenses.
+
+### `explain_terms`
+Explain the key terms and obligations of a license in plain language.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.
