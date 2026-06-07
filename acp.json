@@ -1,0 +1,22 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "license-checker-ai-mcp",
+    "description": "License Checker Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.7",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "license-checker-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "identify_license",
+      "check_compatibility",
+      "generate_license",
+      "explain_terms"
+    ]
+  }
+}

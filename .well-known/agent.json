@@ -1,0 +1,59 @@
+{
+  "name": "license-checker-ai-mcp",
+  "description": "License Checker Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/license-checker-ai-mcp.html",
+  "version": "1.0.7",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "identify_license",
+      "name": "Identify License",
+      "description": "identify_license via license-checker-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "check_compatibility",
+      "name": "Check Compatibility",
+      "description": "check_compatibility via license-checker-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "generate_license",
+      "name": "Generate License",
+      "description": "generate_license via license-checker-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "explain_terms",
+      "name": "Explain Terms",
+      "description": "explain_terms via license-checker-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
